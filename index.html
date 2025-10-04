@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yahyajan — Portfolio</title>
+  <style>
+    :root{
+      --bg:#0f172a; --panel:#111827; --muted:#9ca3af; --text:#e5e7eb;
+      --primary:#22c55e; --primary-ink:#052e1b; --ring:#34d399;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(15,23,42,.8);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid #1f2937;z-index:50}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:800;letter-spacing:.5px}
+    .menu{display:flex;gap:20px}
+    .menu a{opacity:.9}
+    .menu a:hover{opacity:1}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--primary);color:var(--primary-ink);font-weight:700;border:1px solid #10b981;box-shadow:0 0 0 0 rgba(52,211,153,.4);transition:.2s}
+    .btn:focus{outline:2px solid var(--ring);outline-offset:2px}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+    .card{background:var(--panel);border:1px solid #1f2937;border-radius:20px;padding:22px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
+    h2{font-size:clamp(22px,3vw,28px);margin:0 0 10px}
+    p{color:var(--muted);margin:0 0 14px}
+    .grid{display:grid;gap:18px}
+    .projects{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .project{transition:transform .15s ease, box-shadow .15s ease}
+    .project:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid #374151;color:#a7f3d0}
+    .footer{padding:24px 0;color:#9ca3af;border-top:1px solid #1f2937;margin-top:28px;font-size:14px}
+    /* mobile nav */
+    #nav-toggle{display:none}
+    .hamburger{display:none;flex-direction:column;gap:4px}
+    .hamburger span{width:22px;height:2px;background:#e5e7eb}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .menu{display:none}
+      #nav-toggle:checked + .menu{display:flex;flex-direction:column;gap:12px;padding:14px 0}
+      .hamburger{display:flex}
+    }
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Main">
+        <div class="brand">Yahyajan</div>
+        <label class="hamburger" for="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></label>
+        <input id="nav-toggle" type="checkbox" hidden>
+        <div class="menu">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="#contact">Hire Me</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1>Student & Online Teacher</h1>
+        <p>I teach “Smart Money Skills for Beginners” and build cool web projects. This is my simple site made entirely with ChatGPT.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="#contact" style="background:#a78bfa;border-color:#8b5cf6;color:#0b0221">Contact</a>
+        </div>
+      </div>
+      <div class="card" role="img" aria-label="decorative image">
+        <img src="https://picsum.photos/800/500?random=7" alt="Placeholder" style="width:100%;border-radius:14px">
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>I’m Yahyajan, a 17-year-old building towards a big future in tech & business. I like clean design, fast pages, and simple UX.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Teaching</span><span class="tag">Finance</span>
+      </div>
+    </section>
+
+    <section id="projects" class="grid projects">
+      <article class="card project">
+        <img src="https://picsum.photos/600/360?random=1" alt="Project 1" style="width:100%;border-radius:12px;margin-bottom:10px">
+        <h3>Landing Page Template</h3>
+        <p>A reusable landing page built with semantic HTML and utility CSS.</p>
+      </article>
+      <article class="card project">
+        <img src="https://picsum.photos/600/360?random=2" alt="Project 2" style="width:100%;border-radius:12px;margin-bottom:10px">
+        <h3>Course Mini-Site</h3>
+        <p>A one-pager for my Smart Money Skills class with FAQ & signup CTA.</p>
+      </article>
+      <article class="card project">
+        <img src="https://picsum.photos/600/360?random=3" alt="Project 3" style="width:100%;border-radius:12px;margin-bottom:10px">
+        <h3>Personal Blog</h3>
+        <p>A simple blog layout ready for Markdown-to-HTML content.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:mryahyajan222@gmail.com">mryahyajan222@gmail.com</a></p>
+      <form onsubmit="event.preventDefault(); alert('Thanks! I will reply soon.');">
+        <div style="display:grid;gap:10px;max-width:520px">
+          <input aria-label="Your name" required placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e5e7eb">
+          <input type="email" aria-label="Your email" required placeholder="Your email" style="padding:12px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e5e7eb">
+          <textarea aria-label="Your message" rows="4" required placeholder="Your message" style="padding:12px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e5e7eb"></textarea>
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© <span id="year"></span> Yahyajan. Built with ChatGPT.</span>
+  </footer>
+
+  <script>
+    // year + smooth anchor fix on sticky headers
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
